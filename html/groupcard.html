@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+        
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+                
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                        <!-- END APP HEADER  -->
+                        
+                        <!-- START PAGE HEADING -->
+                        <div class="app-heading app-heading-bordered app-heading-page">
+                            <div class="title">
+                                <h2>Распределение нагрузки преподавателей</h2>
+                                <p>Здесь можно создать новый учебный план</p>
+                            </div>
+                            <!--
+                            <div class="heading-elements">
+                                <a href="#" class="btn btn-danger" id="page-like"><span class="app-spinner loading"></span> loading...</a>
+                                <a href="https://themeforest.net/item/boooya-revolution-admin-template/17227946?ref=aqvatarius&license=regular&open_purchase_for_item_id=17227946" class="btn btn-success btn-icon-fixed"><span class="icon-text">$24</span> Purchase</a>
+                            </div>
+                            -->
+                        </div>
+                        <div class="app-heading-container app-heading-bordered bottom">
+                            <ul class="breadcrumb">
+                                <!--  <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Layouts</a></li>
+                                <li class="active">Fixed Navigation</li> -->
+                            </ul>
+                        </div>
+                        <!-- END PAGE HEADING -->
+                        
+                        <!-- START PAGE CONTAINER -->
+                        <div class="container">
+                            <div class="table-responsive">
+                                
+                                <div class="col-md-2">
+                                    <h1>Карточка группы</h1>
+                                    <label></label>
+                                    <select name="st_group" class="bs-select" data-live-search="true">
+                                        <option value=1>771</option><option value=2>772</option><option value=3>671</option><option value=4>672</option><option value=5>471</option><option value=6>473</option><option value=7>472</option><option value=8>474</option><option value=9>272</option><option value=10>372</option><option value=11>271</option><option value=12>871</option><option value=13>872</option><option value=15>475</option><option value=16>476</option><option value=17>161</option><option value=18>261</option><option value=19>262</option><option value=20>263</option><option value=21>361</option><option value=22>362</option><option value=23>561</option><option value=24>861</option><option value=25>151</option><option value=26>251</option><option value=27>252</option><option value=28>253</option><option value=29>351</option><option value=30>352</option><option value=31>551</option><option value=32>851</option><option value=33>782</option><option value=34>781</option><option value=35>681zo</option><option value=36>482</option><option value=37>484</option><option value=38>682</option><option value=39>481</option><option value=40>681</option><option value=41>683</option><option value=42>982</option><option value=43>882</option><option value=44>784</option><option value=45>486</option><option value=46>483</option><option value=47>984</option><option value=48>981</option><option value=49>884</option><option value=50>492</option><option value=51>491</option><option value=52>493</option><option value=53>692</option><option value=54>691</option><option value=55>792</option><option value=56>791</option><option value=57>892</option><option value=58>894</option><option value=59>992</option><option value=60>494</option><option value=61>496</option><option value=62>495</option><option value=63>693</option><option value=64>794</option><option value=65>896</option><option value=66>994</option><option value=67>991</option><option value=68>691zo</option>                                    </select>
+                                    </div>
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <th rowspan="2">Наименование предмета</th>
+                                            <th colspan="2">Распр. по семестр</th>
+                                            <th rowspan="2">Максимальная нагрузка</th>
+                                            <th rowspan="2">ВСP</th>
+                                            <th rowspan="2">Кол-во часов по плану</th>
+                                            <th rowspan="2">Снятие празд. часы</th>
+                                            <th rowspan="2">Кол-во часов к выдаче</th>
+                                            <th colspan="4">ЛПЗ</th>
+                                            <th colspan="5">1 семестр</th>
+                                            <th colspan="5">2 семестр</th>
+                                            <th colspan="2">К-во часов на экзамен</th>
+                                            <th rowspan="2">ВСР к оплате</th>
+                                            <th rowspan="2">консультации</th>
+                                            <th rowspan="2">Итого</th>
+                                            <th rowspan="2">ФИО</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Экзам. зачеты, диф. зач.</th>
+                                            <th>КП</th>
+                                            <th>1-ая подгруппа</th>
+                                            <th>2-ая подгруппа</th>
+                                            <th>КП 1-ая подгрупп.</th>
+                                            <th>КП 2-ая подгрупп.</th>
+                                            <th>по плану</th>
+                                            <th>снятие часов</th>
+                                            <th>к выдаче</th>
+                                            <th>к-во недель</th>
+                                            <th>нед. сет.</th>
+                                            <th>по плану</th>
+                                            <th>снятие часов</th>
+                                            <th>к выдаче</th>
+                                            <th>к-во недель</th>
+                                            <th>нед. сет.</th>
+                                            <th>Э</th>
+                                            <th>ЭК</th>
+                                        </tr>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
+                                            <th>6</th>
+                                            <th>7</th>
+                                            <th>8</th>
+                                            <th>9</th>
+                                            <th>10</th>
+                                            <th>11</th>
+                                            <th>12</th>
+                                            <th>13</th>
+                                            <th>14</th>
+                                            <th>15</th>
+                                            <th>16</th>
+                                            <th>17</th>
+                                            <th>18</th>
+                                            <th>19</th>
+                                            <th>20</th>
+                                            <th>21</th>
+                                            <th>22</th>
+                                            <th>23</th>
+                                            <th>24</th>
+                                            <th>25</th>
+                                            <th>26</th>
+                                            <th>27</th>
+                                            <th>28</th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END PAGE CONTAINER -->
+                            
+                        </div>
+                        <!-- END APP CONTENT -->
+                        
+                    </div>
+                    <!-- END APP CONTAINER -->
+                    
+                </div>
+                
+                <!-- IMPORTANT SCRIPTS -->
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+                <!-- END IMPORTANT SCRIPTS -->
+                <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+                <!-- APP SCRIPTS -->
+                <script type="text/javascript" src="../static/js/app.js"></script>
+                <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+                <!-- END APP SCRIPTS -->
+            </body>
+        </html>

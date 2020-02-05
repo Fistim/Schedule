@@ -1,0 +1,40 @@
+{{ define "navbar" }}
+<nav>
+	<ul>
+		<li class="title">Распределение нагрузки преподавателей</li>
+		<li class="openable">
+			<a href=""><span class="nav-icon-hexa">НП</span>Нагрузка преподавателей</a>
+			<ul>
+				<li><a href="/plan/">Учебный план</a></li>
+				<li><a href="/teachercard/">Карточки преподавателей</a></li>
+			</ul>
+		</li>
+		<li class="openable">
+			<a href=""><span class="nav-icon-hexa">СТ</span>Студенты</a>
+			<ul>
+				<li><a href="/groupcard/">Карточки групп</a></li>
+				<li><a href="/schedule/">Расписание</a></li>
+			</ul>
+		</li>
+		<li class="openable">
+			<a href=""><span class="nav-icon-hexa">Д</span>Данные</a>
+			<ul>
+				<li><a href="/teacher/">Преподаватели</a></li>
+				<li><a href="/classroom/">Кабинеты</a></li>
+				<li><a href="/group/">Группы</a></li>
+				<li><a href="/subject/">Предметы</a></li>
+			</ul>
+		</li>
+		<li class="openable"><a href=""><span class="nav-icon-hexa">О</span>Другое</a>
+		<ul>
+			<li><a href="/cycle/">Циклы и модули</a></li>
+			<li><a href="/bellschedule/">Расписание звонков</a></li>
+			<li><a href="/specialty/">Специальности</a></li>
+			<li><a href="/attestation/">Виды аттестации</a></li>
+			<li><a href="/duration/">Срок обучения</a></li>
+		</ul>
+	</li>
+	<li><a href="/shutdown/">Выход</a></li>
+</ul>
+</nav>
+{{ end }}

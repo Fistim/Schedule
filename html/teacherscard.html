@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+        
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+                
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                        <!-- END APP HEADER  -->
+                        
+                        <!-- START PAGE HEADING -->
+                        <div class="app-heading app-heading-bordered app-heading-page">
+                            <div class="title">
+                                <h2>Распределение нагрузки преподавателей</h2>
+                                <p>Здесь можно создать новый учебный план</p>
+                            </div>
+                            <!--
+                            <div class="heading-elements">
+                                <a href="#" class="btn btn-danger" id="page-like"><span class="app-spinner loading"></span> loading...</a>
+                                <a href="https://themeforest.net/item/boooya-revolution-admin-template/17227946?ref=aqvatarius&license=regular&open_purchase_for_item_id=17227946" class="btn btn-success btn-icon-fixed"><span class="icon-text">$24</span> Purchase</a>
+                            </div>
+                            -->
+                        </div>
+                        <div class="app-heading-container app-heading-bordered bottom">
+                            <ul class="breadcrumb">
+                                <!--  <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Layouts</a></li>
+                                <li class="active">Fixed Navigation</li> -->
+                            </ul>
+                        </div>
+                        <!-- END PAGE HEADING -->
+                        
+                        <!-- START PAGE CONTAINER -->
+                        <div class="container">
+                            <div class="table-responsive">
+                                <h1>Карточка преподавателя</h1>
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Наименование предмета</th>
+                                        <th colspan="2">Распр. по семестр</th>
+                                        <th rowspan="2">Максимальная нагрузка</th>
+                                        <th rowspan="2">ВСP</th>
+                                        <th rowspan="2">Кол-во часов по плану</th>
+                                        <th rowspan="2">Снятие празд. часы</th>
+                                        <th rowspan="2">Кол-во часов к выдаче</th>
+                                        <th colspan="4">ЛПЗ</th>
+                                        <th colspan="5">1 семестр</th>
+                                        <th colspan="5">2 семестр</th>
+                                        <th colspan="2">К-во часов на экзамен</th>
+                                        <th rowspan="2">ВСР к оплате</th>
+                                        <th rowspan="2">консультации</th>
+                                        <th rowspan="2">Итого</th>
+                                        <th rowspan="2">группа</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Экзам. зачеты, диф. зач.</th>
+                                        <th>КП</th>
+                                        <th>1-ая подгруппа</th>
+                                        <th>2-ая подгруппа</th>
+                                        <th>КП 1-ая подгрупп.</th>
+                                        <th>КП 2-ая подгрупп.</th>
+                                        <th>по плану</th>
+                                        <th>снятие часов</th>
+                                        <th>к выдаче</th>
+                                        <th>к-во недель</th>
+                                        <th>нед. сет.</th>
+                                        <th>по плану</th>
+                                        <th>снятие часов</th>
+                                        <th>к выдаче</th>
+                                        <th>к-во недель</th>
+                                        <th>нед. сет.</th>
+                                        <th>Э</th>
+                                        <th>ЭК</th>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                        <th>7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                        <th>10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                        <th>16</th>
+                                        <th>17</th>
+                                        <th>18</th>
+                                        <th>19</th>
+                                        <th>20</th>
+                                        <th>21</th>
+                                        <th>22</th>
+                                        <th>23</th>
+                                        <th>24</th>
+                                        <th>25</th>
+                                        <th>26</th>
+                                        <th>27</th>
+                                        <th>28</th>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- END PAGE CONTAINER -->
+                        
+                    </div>
+                    <!-- END APP CONTENT -->
+                    
+                </div>
+                <!-- END APP CONTAINER -->
+                
+            </div>
+            
+            <!-- IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+            <!-- END IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+            <!-- APP SCRIPTS -->
+            <script type="text/javascript" src="../static/js/app.js"></script>
+            <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+            <!-- END APP SCRIPTS -->
+        </body>
+    </html>

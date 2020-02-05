@@ -1,0 +1,20 @@
+[
+	{
+		"name": "teacher_one",
+		"cabinets": [
+			"201"
+		]
+	},
+	{
+		"name": "teacher_two",
+		"cabinets": [
+			"301"
+		]
+	},
+	{
+		"name": "teacher_three",
+		"cabinets": [
+			"401"
+		]
+	}
+]

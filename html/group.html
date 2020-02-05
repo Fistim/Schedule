@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            {{ template "head_tmpl" }}
+        </head>
+    </head>
+    <body>
+        
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+                
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                        <!-- END APP HEADER  -->
+                        
+                        <!-- START PAGE HEADING -->
+                        <div class="app-heading app-heading-bordered app-heading-page">
+                            <div class="title">
+                                <h2>Распределение нагрузки преподавателей</h2>
+                                <p>Здесь можно создать новый учебный план</p>
+                            </div>
+                            <!--
+                            <div class="heading-elements">
+                                <a href="#" class="btn btn-danger" id="page-like"><span class="app-spinner loading"></span> loading...</a>
+                                <a href="https://themeforest.net/item/boooya-revolution-admin-template/17227946?ref=aqvatarius&license=regular&open_purchase_for_item_id=17227946" class="btn btn-success btn-icon-fixed"><span class="icon-text">$24</span> Purchase</a>
+                            </div>
+                            -->
+                        </div>
+                        <div class="app-heading-container app-heading-bordered bottom">
+                            <ul class="breadcrumb">
+                                <!--  <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Layouts</a></li>
+                                <li class="active">Fixed Navigation</li> -->
+                            </ul>
+                        </div>
+                        <!-- END PAGE HEADING -->
+                        
+                        <!-- START PAGE CONTAINER -->
+                        <div class="container">
+                            <div class="block">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Номер группы</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="362">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Специальность</label>
+                                        <select class="bs-select">
+                                            <option>00.00.00 Программирование</option>
+                                            <option>11.11.11 Администрирование</option>
+                                            <option>22.22.22 Монтажники</option>
+                                            <option>33.33.33 Пример</option>
+                                            <option>44.44.44 Пример</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Куратор</label>
+                                        <select class="bs-select">
+                                            <option>Иванов И.И.</option>
+                                            <option>Петров П.П.</option>
+                                            <option>Сергеев С.С.</option>
+                                            <option>Сидоров С.С.</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Год приёма</label>
+                                        <select class="bs-select">
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Год приёма</label>
+                                        <select class="bs-select">
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                        </select>
+                                    </div>
+                                    <p>
+                                        <button class="btn btn-default">Добавить группу</button>
+                                    </p>
+                                </div>
+                                <!--
+                                <div class="block">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Предмет</label>
+                                            <select class="bs-select">
+                                                <optgroup label="Учебные дисциплины">
+                                                    <option>УиФИС</option>
+                                                    <option>ПиДИС</option>
+                                                </optgroup>
+                                                <optgroup label="Учебные практики">
+                                                    <option>УП 01.01 ТРиЗБД</option>
+                                                    <option>УП 01.02 СиНПК</option>
+                                                    <option>Option Number 5</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Часы">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="app-radio inline">
+                                        <label><input type="radio" name="app-radio-2" value="1" checked> Экзамен</label>
+                                    </div>
+                                    <div class="app-radio inline">
+                                        <label><input type="radio" name="app-radio-2" value="0"> Диф. зачёт</label>
+                                    </div>
+                                    <p>
+                                        <button class="btn btn-default">Добавить предмет</button>
+                                        <button class="btn btn-default">Удалить преааааааааамет</button>
+                                    </p>
+                                </div>
+                                -->
+                                
+                            </div>
+                            <!-- END PAGE CONTAINER -->
+                            
+                        </div>
+                        <!-- END APP CONTENT -->
+                        
+                    </div>
+                    <!-- END APP CONTAINER -->
+                    
+                </div>
+                
+                <!-- IMPORTANT SCRIPTS -->
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+                <!-- END IMPORTANT SCRIPTS -->
+                <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+                <!-- APP SCRIPTS -->
+                <script type="text/javascript" src="../static/js/app.js"></script>
+                <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+                <script type="text/javascript" src="../static/js/app_demo.js"></script>
+                <!-- END APP SCRIPTS -->
+            </body>
+        </html>

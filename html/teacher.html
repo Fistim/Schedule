@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    <!-- <nav>
+                        <ul>
+                            <li class="title">Распределение нагрузки преподавателей</li>
+                            <li>
+                                <a href=""><span class="nav-icon-hexa">НП</span>Нагрузка преподавателей</a>
+                                <ul>
+                                    <li><a href="studyPlan.html">Учебный план</a></li>
+                                    <li><a href="teacherCards.html">Карточки преподавателей</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""><span class="nav-icon-hexa">СТ</span>Студенты</a>
+                                <ul>
+                                    <li><a href="groupCards.html">Карточки групп</a></li>
+                                    <li><a href="schedule.html">Расписание</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""><span class="nav-icon-hexa">Д</span>Данные</a>
+                                <ul>
+                                    <li><a href="teacherPage.html">Преподаватели</a></li>
+                                    <li><a href="classroomPage.html">Кабинеты</a></li>
+                                    <li><a href="groupPage.html">Группы</a></li>
+                                    <li><a href="subjectPage.html">Предметы</a></li>
+                                </ul>
+                            </li>
+                            <li><a href=""><span class="nav-icon-hexa">О</span>Другое</a>
+                            <ul>
+                                <li><a href="modulePage.html">Циклы и модули</a></li>
+                                <li><a href="bellSchedulePage.html">Расписание звонков</a></li>
+                                <li><a href="specialtyPage.html">Специальности</a></li>
+                                <li><a href="attestationPage.html">Виды аттестации</a></li>
+                                <li><a href="durationPage.html">Срок обучения</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> -->
+                {{ template "navbar" }}
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- START APP CONTENT -->
+            <div class="app-content">
+                <!-- START APP HEADER -->
+                <div class="app-header app-header-design-default">
+                    <ul class="app-header-buttons">
+                        <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon"
+                            data-sidebar-toggle=".app-sidebar.dir-left"><span
+                            class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon"
+                                data-sidebar-minimize=".app-sidebar.dir-left"><span
+                                class="icon-menu"></span></a></li>
+                            </ul>
+                            <!-- END APP HEADER  -->
+                            <!-- START PAGE HEADING -->
+                            <div class="app-heading app-heading-bordered app-heading-page">
+                                <div class="title">
+                                    <h2>Информация по преподавателям</h2>
+                                    <p>Здесь можно редактировать информацию о преподавателях</p>
+                                </div>
+                                <!--
+                                <div class="heading-elements">
+                                    <a href="#" class="btn btn-danger" id="page-like"><span class="app-spinner loading"></span> loading...</a>
+                                    <a href="https://themeforest.net/item/boooya-revolution-admin-template/17227946?ref=aqvatarius&license=regular&open_purchase_for_item_id=17227946" class="btn btn-success btn-icon-fixed"><span class="icon-text">$24</span> Purchase</a>
+                                </div>
+                                -->
+                            </div>
+                            <div class="app-heading-container app-heading-bordered bottom">
+                                <ul class="breadcrumb">
+                                    <!--  <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Layouts</a></li>
+                                    <li class="active">Fixed Navigation</li> -->
+                                </ul>
+                            </div>
+                            <!-- END PAGE HEADING -->
+                            <!-- START PAGE CONTAINER -->
+                            <div class="container">
+                                <!-- START BLOCk -->
+                                <form>
+                                    <label>Учителя</label>
+                                    <select class="bs-select">
+                                        <option>Учитель 1</option>
+                                        <option>Учитель 2</option>
+                                        <option>Учитель 3</option>
+                                        <option>Учитель 4</option>
+                                    </select></br></br>
+                                    <button class="btn-danger">Удалить преподавателя</button>
+                                </form >
+                            </div>
+                            <div class="container">
+                                <form class="form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-4" >
+                                            <label>фамилия</label></br>
+                                            <input type="text" class="form-control inline" placeholder="Фамилия">
+                                        </div>
+                                        <div class="col-md-4" style=>
+                                            <label>фамилия</label></br>
+                                            <input type="text" class="form-control inline" placeholder="Фамилия">
+                                        </div>
+                                        <div class="col-md-4" style=>
+                                            <label>фамилия</label></br>
+                                            <input type="text" class="form-control inline" placeholder="Фамилия">
+                                        </div>
+                                    </div></br>
+                                    <select class="bs-select">
+                                        <option>Кабинет 1</option>
+                                    </select></br></br>
+                                    <button type="submit" class="btn-success">Добавить преподавателя</button>
+                                </form>
+                            </div>
+                            <!-- END BLOCk -->
+                        </div>
+                        <!-- END PAGE CONTAINER -->
+                    </div>
+                    <!-- END APP CONTENT -->
+                </div>
+                <!-- END APP CONTAINER -->
+            </div>
+            <!-- IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+            <!-- END IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+            <!-- APP SCRIPTS -->
+            <script type="text/javascript" src="../static/js/app.js"></script>
+            <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+            <!-- <script type="text/javascript" src="../static/js/app_demo.js"></script> -->
+            <!-- END APP SCRIPTS -->
+        </body>
+    </html>

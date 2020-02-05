@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ template "head_tmpl" }}
+</head>
+<body>
+
+<!-- APP WRAPPER -->
+<div class="app">
+
+    <!-- START APP CONTAINER -->
+    <div class="app-container">
+        <!-- START SIDEBAR -->
+        <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+            
+        {{ template "navbar" }}
+        </div>
+
+        <!-- END SIDEBAR -->
+
+        <!-- START APP CONTENT -->
+        <div class="app-content">
+            <!-- START APP HEADER -->
+            <div class="app-header app-header-design-default">
+                <ul class="app-header-buttons">
+                    <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon"
+                                                  data-sidebar-toggle=".app-sidebar.dir-left"><span
+                            class="icon-menu"></span></a></li>
+                    <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon"
+                                                 data-sidebar-minimize=".app-sidebar.dir-left"><span
+                            class="icon-menu"></span></a></li>
+                </ul>
+                <!-- END APP HEADER  -->
+
+                <!-- START PAGE HEADING -->
+                <div class="app-heading app-heading-bordered app-heading-page">
+                    <div class="title">
+                        <h2>Информация о кабинетах</h2>
+                        <p>Здесь можно редактировать информацию о кабинетах </p>
+                    </div>
+                    <!--
+                    <div class="heading-elements">
+                        <a href="#" class="btn btn-danger" id="page-like"><span class="app-spinner loading"></span> loading...</a>
+                        <a href="https://themeforest.net/item/boooya-revolution-admin-template/17227946?ref=aqvatarius&license=regular&open_purchase_for_item_id=17227946" class="btn btn-success btn-icon-fixed"><span class="icon-text">$24</span> Purchase</a>
+                    </div>
+                    -->
+                </div>
+                <div class="app-heading-container app-heading-bordered bottom">
+                    <ul class="breadcrumb">
+                        <!--  <li><a href="#">Dashboard</a></li>
+                         <li><a href="#">Layouts</a></li>
+                         <li class="active">Fixed Navigation</li> -->
+                    </ul>
+                </div>
+                <!-- END PAGE HEADING -->
+
+                <!-- START PAGE CONTAINER -->
+                <div class="container">
+                    <div class="table-responsive ">
+
+                        <!-- START BLOCk -->
+                        <table class="table table-striped table-bordered ">
+                            <tr>
+                                <th>Номер кабинета</th>
+                                <th>Количество мест</th>
+                                <th>Компьютерный</th>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="classroomId" data-type="text" data-pk="1" data-title="Номер кабинета" class="editable editable-click" data-original-title="" title="">{{ .ClassroomId}}</a></td>
+                                <td><a href="#" id="placeQuantity" data-type="text" data-pk="1" data-title="Номер кабинета" class="editable editable-click" data-original-title="" title="">{{ .PlaceQuantity}}</a></td>
+                                <td>Компьютерный</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-- END BLOCk -->
+
+            </div>
+            <!-- END PAGE CONTAINER -->
+
+        </div>
+        <!-- END APP CONTENT -->
+
+    </div>
+    <!-- END APP CONTAINER -->
+
+</div>
+
+<!-- IMPORTANT SCRIPTS -->
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+<script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<!-- END IMPORTANT SCRIPTS -->
+<script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+<script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+<!-- APP SCRIPTS -->
+<script type="text/javascript" src="../static/js/app.js"></script>
+<script src="../static/js/vendor/xeditable/bootstrap-editable.min.js"></script>
+<script src="../static/js/vendor/xeditable/ext/address.js"></script>
+<script type="text/javascript" src="../static/js/app_plugins.js"></script>
+<!-- <script type="text/javascript" src="../static/js/app_demo.js"></script> -->
+<!-- END APP SCRIPTS -->
+<script src="../static/js/app_demo_editable.js"></script>
+</body>
+</html>

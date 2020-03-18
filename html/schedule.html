@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container" >
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                {{ template "navbar" }}
+            </div>
+            <!-- END SIDEBAR -->
+
+            <!-- START APP CONTENT -->
+            <div class="app-content" id="app">
+                <!-- START APP HEADER -->
+                <div class="app-header app-header-design-default">
+                    <ul class="app-header-buttons">
+                        <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                    </ul>
+                    <!-- END APP HEADER  -->
+
+                    <!-- START PAGE HEADING -->
+                    <div class="app-heading app-heading-bordered app-heading-page">
+                        <div class="title">
+                            <h2>Распределение нагрузки преподавателей</h2>
+                            <p>Здесь можно создать новый учебный план</p>
+                        </div>
+                    </div>
+                    <!-- END PAGE HEADING -->
+
+                    <!-- START PAGE CONTAINER -->
+                    <div class="container">
+                    <div class="block">
+                        <div class="col-md-12">
+                            <div class="app-heading app-heading-small app-heading-condensed padding-left-0">
+                                <div class="title">
+                                    <h2>Расписание занятий</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <!--data-target="#modal-backdrop-disable"-->
+                                    <button class="btn btn-primary" @click="generateSchedule()">Сгенерировать расписание</button>
+                                </div>
+                                <div class="col-md-4">
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary btn-icon-fixed dropdown-toggle" data-toggle="dropdown"><span class="fa fa-bars"></span>Экспорт расписания</button>
+                                        <ul class="dropdown-menu dropdown-left">
+                                           
+                                            <li><a href="#" onClick ="$('#sortable-data').tableExport({type:'excel',escape:'false'});"><img src='img/icons/xls.png' width="24"> XLS</a></li>
+                                           
+                                            <li><a href="#" onClick ="$('#sortable-data').tableExport({type:'pdf',escape:'false'});"><img src='img/icons/pdf.png' width="24"> PDF</a></li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                                <div class="heading-elements">
+                                    
+                                </div>
+                                <br>
+                            <div>
+                                <ul class="nav nav-pills nav-justified">
+                                    <li class="active"><a href="#pills-4" data-toggle="tab" @click="getScheduleForDay(1)">Понедельник</a></li>
+                                    <li><a href="#pills-5" @click="getScheduleForDay(2)">Вторник</a></li>
+                                    <li><a href="#pills-6" @click="getScheduleForDay(3)">Среда</a></li>
+                                    <li><a href="#pills-7" @click="getScheduleForDay(4)">Четверг</a></li>
+                                    <li><a href="#pills-8" @click="getScheduleForDay(5)">Пятница</a></li>
+                                    <li><a href="#pills-9" @click="getScheduleForDay(6)">Суббота</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active col-md-3" id="pills-4" v-for='group in scheduleForDay'>
+                                        <table class="table table-bordered table-hover">
+                                            <thead  >
+                                                <tr >
+                                                    <th colspan="4" height="50px" style="font-size: 20pt"><center>${group.Group}</center></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for='tableData in group.Table'>
+                                                    <td>1</td>
+                                                    <td v-for="subj in tableData.Subject.slice(0,1)">${subj}</td>
+                                                    <td  v-for="teacher in tableData.Teacher.slice(0,1)">${teacher}</td>
+                                                    <td v-for="cab in tableData.Cabinet.slice(0,1)">${cab}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane" id="pills-5">
+                                        <p>Текст</p>
+                                    </div>
+                                    <div class="tab-pane" id="pills-6">
+                                        <p>Текст</p>
+                                    </div>
+                                    <div class="tab-pane" id="pills-7">
+                                        <p>Текст</p>
+                                    </div>
+                                    <div class="tab-pane" id="pills-8">
+                                        <p>Текст</p>
+                                    </div>
+                                    <div class="tab-pane" id="pills-8">
+                                        <p>Текст</p>
+                                    </div>
+                                    <div class="tab-pane" id="pills-9">
+                                        <p>Текст</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- END APP CONTAINER -->
+                <!-- MODALS -->
+                            <div class="modal fade" id="modal-backdrop-disable" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">                    
+                                    <div class="modal-content">                    
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Начало недели</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="mask_date_rev form-control">
+                                                    <span class="help-block">Format: DD-MM-YYYY</span>
+                                                </div>
+                                            </div>  
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Конец недели</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="mask_date_rev form-control">
+                                                    <span class="help-block">Format: DD-MM-YYYY</span>
+                                                </div>
+                                            </div>  
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Четная/Нечетная</label>
+                                                <div class="col-md-9">
+                                                    <div class="app-radio inline"> 
+                                                        <label><input type="radio" name="app-radio-2" value="1" checked> Четная</label>
+                                                    </div>
+                                                    <div class="app-radio inline"> 
+                                                        <label><input type="radio" name="app-radio-2" value="0"> Нечетная</label> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">Закрыть</button>
+                                                <button type="submit" class="btn btn-default">Сгенерировать</button>
+                                            </div>
+                                        </div>                   
+                                    </div>
+                                </div>            
+                            </div>
+                            </div>
+
+            <script src="https://unpkg.com/vue"></script>
+            <script type="text/javascript" src="../static/js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+            <!-- THIS PAGE SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-daterange/daterangepicker.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/multiselect/jquery.multi-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/datatables/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/datatables/dataTables.bootstrap.min.js"></script>
+            
+            <script type="text/javascript" src="../static/js/vendor/tableexport/tableExport.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/tableexport/jquery.base64.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/tableexport/html2canvas.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/tableexport/jspdf/libs/sprintf.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/tableexport/jspdf/jspdf.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/tableexport/jspdf/libs/base64.js"></script>
+            <!-- END THIS PAGE SCRIPTS -->
+            <!-- IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+            <!-- END IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+            <!-- APP SCRIPTS -->
+            <script type="text/javascript" src="../static/js/app.js"></script>
+            <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+            <script type="text/javascript" src="../static/js/api/vueSchedule.js"></script>
+
+            <!-- SATISFYING RED BUTTON AT RIGHT CORNER -->
+            <!-- END APP SCRIPTS -->
+        </body>
+    </html>

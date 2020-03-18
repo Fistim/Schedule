@@ -1,0 +1,64 @@
+[
+	{
+		"name": "Антипов Д.А.",
+		"cabinets": [
+			{
+				"name": "302",
+				"is_computer": true
+			}
+		]
+	},
+	{
+		"name": "Шаймагсумов В.М.",
+		"cabinets": [
+			{
+				"name": "302",
+				"is_computer": true
+			}
+		]
+	},
+	{
+		"name": "Фунтиков М.Н.",
+		"cabinets": [
+			{
+				"name": "302",
+				"is_computer": true
+			}
+		]
+	},
+	{
+		"name": "Белозеров Н.С.",
+		"cabinets": [
+			{
+				"name": "302",
+				"is_computer": true
+			}
+		]
+	},
+	{
+		"name": "Грушевский Ю.В.",
+		"cabinets": [
+			{
+				"name": "302",
+				"is_computer": true
+			}
+		]
+	},
+	{
+		"name": "Фамилия1 т.т.",
+		"cabinets": null
+	},
+	{
+		"name": "Фамилия2 т.т.",
+		"cabinets": [
+			{
+				"name": "112",
+				"is_computer": true
+			}
+		]
+	},
+	{
+		"name": "Фамилия12 т.т.",
+		"cabinets": null
+	}
+]

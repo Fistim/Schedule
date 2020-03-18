@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            {{ template "head_tmpl" }}
+        </head>
+    </head>
+    <body>
+
+        <!-- APP WRAPPER -->
+        <div class="app" id="app" >
+            <!-- START APP CONTAINER -->
+            <div class="app-container" >
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                        <!-- END APP HEADER  -->
+
+                        <!-- START PAGE HEADING -->
+                        <div class="app-heading app-heading-bordered app-heading-page">
+                            <div class="title">
+                                <h2>Распределение нагрузки преподавателей</h2>
+                                <p>Здесь можно создать новый учебный план</p>
+                            </div>
+                        </div>
+                        <!-- END PAGE HEADING -->
+
+                        <!-- START PAGE CONTAINER -->
+                        <div class="container">
+                            <div class="block">
+                                <div class="col-md-4 col-ms-4 grid-element filter-business">
+                                    <div class="tile-basic">
+                                        <a href="#" class="preview" data-preview-size="modal-lg">
+                                            <div class="tile-content tile-content-condensed-bottom text-center">
+                                                <button type="button" class="btn btn-success btn-lg">Добавить</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-ms-4 grid-element filter-business">
+                                    <div class="tile-basic">
+                                        <a href="#" class="preview" data-preview-size="modal-lg">
+                                            <div class="tile-content tile-content-condensed-bottom text-center">
+                                                <button type="button" class="btn btn-warning btn-lg">Редактировать</button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-ms-4 grid-element filter-business">
+                                    <div class="tile-basic">
+                                        <a href="#" class="preview-delete" data-preview-size="modal-lg">
+                                            <div class="tile-content tile-content-condensed-bottom text-center">
+                                                <button type="button" class="btn btn-danger btn-lg">Удалить</button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="block-content">
+                            <table class="table table-striped table-bordered">
+                                <h1>Группы</h1>
+                                <p>Здесь вы можете добавить, удалить или редактировать группы.</p>
+                                <thead>
+                                    <tr>
+                                        <th>Группа</th>
+                                        <th>Специальность</th>
+                                        <th>Куратор</th>
+                                        <th>Курс</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="c in groups">
+                                        <td>${c.Groupnumber}</td>
+                                        <td>${c.IDSpecialty}</td>
+                                        <td>${c.IDTeacher}</td>
+                                        <td>${c.Year}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                            </div>
+                            <!-- END PAGE CONTAINER -->
+
+                        </div>
+                        <!-- END APP CONTENT -->
+
+                    </div>
+                    <!-- END APP CONTAINER -->
+
+                </div>
+                <!-- модальные окна -->
+                        <div class="modal fade" id="preview" tabindex="-1" role="dialog">
+                            <div class="modal-dialog">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                                <div class="modal-content">
+                                    <div class="block">
+                                        <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Номер группы</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="362">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Форма обучения</label>
+                                        <div class="app-radio inline">
+                                            <label><input type="radio" class="building-radio" name="app-radio-2" value="1" checked="checked"> Бюджетная</label>
+                                        </div>
+                                        <div class="app-radio inline">
+                                            <label><input type="radio" class="building-radio" name="app-radio-2" value="2"> Внебюджетная</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Специальность</label>
+                                        <select id="ffff" >
+                                            <option v-for="sp in specialties" v-bind:value="sp.Code">${sp.Code + " " + sp.Name}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Куратор</label>
+                                        <select id="selectTeacher" class="">
+                                            <option v-for="tr in teachers" v-bind:value="tr.Surname">${tr.Surname +" "+ tr.Name}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Курс</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Количество студентов</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="30">
+                                        </div>
+                                    </div>
+                                        <div class="col-md-12">
+                                            <br>
+                                            <button type="button" class="btn btn-default" >Добавить группу</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- модальные окна -->
+   
+                <!-- IMPORTANT SCRIPTS -->
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+                <!-- END IMPORTANT SCRIPTS -->
+                <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+                <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+                <!-- APP SCRIPTS -->
+                <script type="text/javascript" src="../static/js/app.js"></script>
+                <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+                <script type="text/javascript" src="../static/js/app_demo.js"></script>
+                <!-- END APP SCRIPTS -->
+                
+            </body>
+            
+<script src="https://unpkg.com/vue"></script>
+                <script type="text/javascript" src="../static/js/api/vueGroup.js"></script>
+        </html>

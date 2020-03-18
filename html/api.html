@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>API</title>
+
+        <!-- META SECTION -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- END META SECTION -->
+        <!-- CSS INCLUDE -->
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <!-- EOF CSS INCLUDE -->
+    </head>
+    <body>
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <!-- END SIDEBAR -->
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START PAGE CONTAINER -->
+                    <div class="container">
+                        <button type="button" class="btn btn-primary btn-glow margin-right-5 margin-bottom-20" onclick="window.location.href = /plan/">Назад</button>
+                        <table class="table-bordered table table-responsive" style="width: 100%; font-size:150%">
+                          <tr>
+                            <td><a href="/api/teacher/">/api/teacher/</a></td>
+                            <td>Get teacher by ID (fe: /api/teacher/1). Can be POST, GET, UPDATE (PATCH)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/teacher">/api/teacher</a></td>
+                            <td>Get list of all teachers</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/classroom/">/api/classroom/</a></td>
+                            <td>Get classroom by ID (fe: /api/classroom/1). Can be POST, GET, UPDATE (PATCH)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/classroom">/api/classroom</a></td>
+                            <td>Get list of all classrooms</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/classroom/computer">/api/classroom/computer</a></td>
+                            <td>Get list of all computer classrooms</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/classroom/lecture">/api/classroom/lecture</a></td>
+                            <td>Get list of all lecture classrooms</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/group">/api/group</a></td>
+                            <td>Get list of all groups</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/group/">/api/group/</a></td>
+                            <td>Get group by ID (fe: /api/group/471). Can be POST, GET, UPDATE (PATCH)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/group/specialty/">/api/group/specialty/</a></td>
+                            <td>Get group by specialty (fe: /api/group/specialty/1). Can be POST, GET, UPDATE (PATCH)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/schedule/generate">/api/schedule/generate</a></td>
+                            <td>Get schedule that generates when method called</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/subject">/api/subject</a></td>
+                            <td>Get list of all subjects</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/subject/module/">/api/subject/module/</a></td>
+                            <td>Get subject by professional module</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/subject/">/api/subject/</a></td>
+                            <td>Get subject by ID (fe: /api/subject/1). Can be POST, GET, UPDATE (PATCH)</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/building/">/api/building/</a></td>
+                            <td>Get list of buildings or building by ID (/api/building/{ID})</td>
+                          </tr>
+                          <tr>
+                            <td><a href="/api/auth/">/api/auth/</a></td>
+                            <td>Check credentials of user. Returns group if user is valid. Returns null only if group unsupported</td>
+                          </tr>
+                          <tr>
+                          <tr>
+                            <td><a href="/api/modelsDownload">Download</a></td>
+                            <td>Models file</td>
+                          </tr>
+                        </table>
+                    </div>
+                    <!-- END PAGE CONTAINER -->
+                </div>
+                <!-- END APP CONTENT -->
+            </div>
+            <!-- END APP CONTAINER -->
+        </div>
+        <!-- END APP WRAPPER -->
+
+        <!-- IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <!-- END IMPORTANT SCRIPTS -->
+        <!-- APP SCRIPTS -->
+        <script type="text/javascript" src="../static/js/app.js"></script>
+        <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+        <!-- END APP SCRIPTS -->
+    </body>
+</html>

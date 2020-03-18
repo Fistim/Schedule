@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                        <!-- END APP HEADER  -->
+
+                        <!-- START PAGE HEADING -->
+                        <div class="app-heading app-heading-bordered app-heading-page">
+                            <div class="title">
+                                <h2>Распределение нагрузки преподавателей</h2>
+                                <p>Здесь можно создать новый учебный план</p>
+                            </div>
+                        </div>
+                        <!-- END PAGE HEADING -->
+
+                        <!-- START PAGE CONTAINER -->
+                        <div class="container">
+                            <div class="block">
+                                <h1>Карточка преподавателя</h1>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select name="st_group" class="bs-select" data-live-search="true">
+                                            <option value="1">Антипов Дмитрий Александрович</option>
+                                            <option value="2">Маюнова Анна Юрьевна</option>
+                                            <option value="3">Иванов Иван Иванович</option>
+                                            <option value="4">Сидоров Сидор Сидорович</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-3">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-icon-fixed dropdown-toggle" data-toggle="dropdown"><span class="fa fa-bars"></span>Экспорт карточки</button>
+                                            <ul class="dropdown-menu dropdown-left">  
+                                                <li><a href="#" onClick ="$('#sortable-data').tableExport({type:'excel',escape:'false'});"><img src='img/icons/xls.png' width="24"> XLS</a></li>
+                                                <li><a href="#" onClick ="$('#sortable-data').tableExport({type:'pdf',escape:'false'});"><img src='img/icons/pdf.png' width="24"> PDF</a></li>
+                                            </ul>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modal-default">Добавить</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-danger btn-lg">Удалить</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-warning btn-lg">Редактировать</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" class="btn btn-info btn-lg">Информация</button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered datatable-extended">
+                                        <thead>
+                                            <tr>
+                                                <th>Наименование предмета</th>
+                                                <th>Кол-во часов к выдаче</th>
+                                                <th>Форма промежуточной аттестации</th>
+                                                <th>к-во недель</th>
+                                                <th>нед. сет.</th>
+                                                <th>группа</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Основы философии</td>
+                                                <td>36</td>
+                                                <td>ДЗ</td>
+                                                <td>14</td>
+                                                <td>3</td>
+                                                <td>362</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+                            <!--<div class="table-responsive">
+                                <h1>Карточка преподавателя</h1>
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th rowspan="2">Наименование предмета *</th>
+                                        <th colspan="2">Распр. по семестр</th>
+                                        <th rowspan="2">Максимальная нагрузка</th>
+                                        <th rowspan="2">ВСP</th>
+                                        <th rowspan="2">Кол-во часов по плану</th>
+                                        <th rowspan="2">Снятие празд. часы</th>
+                                        <th rowspan="2">Кол-во часов к выдаче *</th>
+                                        <th colspan="4">ЛПЗ</th>
+                                        <th colspan="5">1 семестр</th>
+                                        <th colspan="5">2 семестр</th>
+                                        <th colspan="2">К-во часов на экзамен</th>
+                                        <th rowspan="2">ВСР к оплате</th>
+                                        <th rowspan="2">консультации</th>
+                                        <th rowspan="2">Итого</th>
+                                        <th rowspan="2">группа *</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Экзам. зачеты, диф. зач. *</th>
+                                        <th>КП</th>
+                                        <th>1-ая подгруппа</th>
+                                        <th>2-ая подгруппа</th>
+                                        <th>КП 1-ая подгрупп.</th>
+                                        <th>КП 2-ая подгрупп.</th>
+                                        <th>по плану</th>
+                                        <th>снятие часов</th>
+                                        <th>к выдаче</th>
+                                        <th>к-во недель *</th>
+                                        <th>нед. сет.</th>
+                                        <th>по плану</th>
+                                        <th>снятие часов</th>
+                                        <th>к выдаче</th>
+                                        <th>к-во недель</th>
+                                        <th>нед. сет. *</th>
+                                        <th>Э</th>
+                                        <th>ЭК</th>
+                                    </tr>
+                                </table>
+                                </div> -->
+                    <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default-header">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title" id="modal-default-header">Добавление предмета</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Наименование предмета</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <h3>Распределение по семестрам</h3>
+                                        <div class="block">
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">Форма промежуточной аттестации</label>
+                                                <div class="col-md-9">
+                                                    <select name="st_group" class="bs-select">
+                                                        <option>Экзамен</option>
+                                                        <option>Диф.зачет</option>
+                                                        <option>Зачет</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">КП</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                       
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Максимальная нагрузка</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">ВСР</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Кол-во часов по плану</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Снятие празд. часы</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Кол-во часов к выдаче</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <h3>ЛПЗ</h3>
+                                        <div class="block">
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">1-ая группа</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">2-ая группа</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">КП 1-ая подгруппа</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">КП 2-ая подгруппа</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3>1 семестр</h3>
+                                        <div class="block">
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">По плану</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">Снятие часов</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">К выдаче</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">К-во нед.</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">нед. сет.</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3>2 семестр</h3>
+                                        <div class="block">
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">По плану</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">Снятие часов</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">К выдаче</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">К-во нед.</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">нед. сет.</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3>К-во часов на экзамен</h3>
+                                        <div class="block">
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">Э</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label">ЭК</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">ВСР к оплате</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Консультации</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Итого</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Группа</label>
+                                            <div class="col-md-9">
+                                                <select name="st_group" class="bs-select" data-live-search="true">
+                                            <option value=1>771</option><option value=2>772</option><option value=3>671</option><option value=4>672</option><option value=5>471</option><option value=6>473</option><option value=7>472</option><option value=8>474</option><option value=9>272</option><option value=10>372</option><option value=11>271</option><option value=12>871</option><option value=13>872</option><option value=15>475</option><option value=16>476</option><option value=17>161</option><option value=18>261</option><option value=19>262</option><option value=20>263</option><option value=21>361</option><option value=22>362</option><option value=23>561</option><option value=24>861</option><option value=25>151</option><option value=26>251</option><option value=27>252</option><option value=28>253</option><option value=29>351</option><option value=30>352</option><option value=31>551</option><option value=32>851</option><option value=33>782</option><option value=34>781</option><option value=35>681zo</option><option value=36>482</option><option value=37>484</option><option value=38>682</option><option value=39>481</option><option value=40>681</option><option value=41>683</option><option value=42>982</option><option value=43>882</option><option value=44>784</option><option value=45>486</option><option value=46>483</option><option value=47>984</option><option value=48>981</option><option value=49>884</option><option value=50>492</option><option value=51>491</option><option value=52>493</option><option value=53>692</option><option value=54>691</option><option value=55>792</option><option value=56>791</option><option value=57>892</option><option value=58>894</option><option value=59>992</option><option value=60>494</option><option value=61>496</option><option value=62>495</option><option value=63>693</option><option value=64>794</option><option value=65>896</option><option value=66>994</option><option value=67>991</option><option value=68>691zo</option>
+                                        </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                        <div class="col-md-3">
+                                            <label>Кол-во семестров</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" class="form-control spinner" value="5" data-spinner-min="1" data-spinner-max="8" readonly="true">
+                                        </div>
+                                    </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-link" data-dismiss="modal">Закрыть</button>
+                                        <button type="button" class="btn btn-default">Добавить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+                        </div>
+                        <!-- END PAGE CONTAINER -->
+
+                    </div>
+                    <!-- END APP CONTENT -->
+
+                </div>
+                <!-- END APP CONTAINER -->
+
+            </div>
+
+            <!-- IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+            <!-- END IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+            <!-- APP SCRIPTS -->
+            <script type="text/javascript" src="../static/js/app.js"></script>
+            <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+            <!-- END APP SCRIPTS -->
+        </body>
+    </html>

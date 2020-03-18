@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+        <!-- APP WRAPPER -->
+        <div class="app" >
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                {{ template "navbar" }}
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- START APP CONTENT -->
+            <div class="app-content" id="app">
+
+                <!-- START APP HEADER -->
+                <div class="app-header app-header-design-default">
+                    <ul class="app-header-buttons">
+                        <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon"
+                            data-sidebar-toggle=".app-sidebar.dir-left"><span
+                            class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon"
+                                data-sidebar-minimize=".app-sidebar.dir-left"><span
+                                class="icon-menu"></span></a></li>
+                            </ul>
+                            <!-- END APP HEADER  -->
+                            <!-- START PAGE HEADING -->
+                            <div class="app-heading app-heading-bordered app-heading-page">
+                                <div class="title">
+                                    <h2>Информация по преподавателям</h2>
+                                    <p>Здесь можно редактировать информацию о преподавателях</p>
+                                </div>
+                            </div>
+                            <!-- END PAGE HEADING -->
+                            <!-- START PAGE CONTAINER -->
+                            <div class="container" >
+                                <!-- START BLOCk -->
+                                <div class="block">
+                                    <div class="row" >
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modal-default">Добавить</button>
+                                        </div>
+                                        <div class="col-md-4" >
+                                            <button type="button" class="btn btn-danger btn-lg">Удалить</button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-warning btn-lg">Редактировать</button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <table class="table table-striped table-bordered ">
+                                        <thead>
+                                            <tr>
+                                                <th>Фамилия</th>
+                                                <th>Имя</th>
+                                                <th>Отчество</th>
+                                                <th>Закреплённый кабинет</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="c in teachers">
+                                                <td>${c.Name}</td>
+                                                <td>${c.Surname}</td>
+                                                <td>${c.Patronymic}</td>
+                                                <td>${c.IDClassroom}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END BLOCk -->
+                        </div>
+                        <!-- END PAGE CONTAINER -->
+                    </div>
+                    <!-- END APP CONTENT -->
+                </div>
+                <!-- END APP CONTAINER -->
+                <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default-header">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                                <div class="modal-content">
+                                    <div class="block">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="modal-default-header">Добавление кабинета</h4>    
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label>Фамилия</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control surname">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Имя</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Отчество</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control patronymic">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label>Закрепленный кабинет</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <select id="selectClassroom">
+                                                    <option v-for="cr in classrooms" v-bind:value="cr.Name">${cr.Name}</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link" data-dismiss="modal">Закрыть</button>
+                                            <button type="button" class="btn btn-default" onclick="addTeacher()">Добавить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <script src="https://unpkg.com/vue"></script>
+            <script type="text/javascript" src="../static/js/api/vueTeacher.js"></script>
+            <script type="text/javascript" src="../static/js/api/apiTeacher.js"></script>
+            <!-- IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+            <!-- END IMPORTANT SCRIPTS -->
+            <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+            <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+            <!-- APP SCRIPTS -->
+            <script type="text/javascript" src="../static/js/app.js"></script>
+            <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+            <!-- END APP SCRIPTS -->
+    </body>
+</html>

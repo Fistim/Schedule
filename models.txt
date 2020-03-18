@@ -1,0 +1,109 @@
+package api
+
+import "time"
+
+type Subject struct {
+	ID                    uint
+	Name                  string
+	Shortname             string
+	ID_professionalmodule uint
+}
+
+type Professionalmodule struct {
+	ID        uint
+	Name      string
+	Shortname string
+	IDCycle   uint
+}
+
+type Cycle struct {
+	ID        uint
+	Name      string
+	Shortname string
+}
+
+type Lesson struct {
+	ID        uint
+	Timestart time.Time
+	Timeend   time.Time
+}
+
+type Attestation struct {
+	ID        uint
+	Name      string
+	Shortname string
+}
+
+type SubjectOfGroup struct {
+	ID            uint
+	IDSubject     uint
+	IDGroup       uint
+	IDTeacher     uint
+	IDSemester    uint
+	IDAttestation uint
+	Hoursquantity uint
+}
+
+type Semester struct {
+	ID            uint
+	WeeksQuantity uint
+}
+
+type Teacher struct {
+	ID          uint
+	Name        string
+	IDClassroom uint
+	Surname     string
+	Patronymic  string
+}
+
+type ScheduleOfGroup struct {
+	ID             uint
+	IDSubject      uint
+	IDGroup        uint
+	IDSchedule     uint
+	IDLessonNumber uint
+	IDClassroom    uint
+}
+
+type Schedule struct {
+	ID         uint
+	IsShort    bool
+	IDGroup    uint
+	IsEvenWeek bool
+	Weekday    string
+}
+
+type Classroom struct {
+	ID            uint
+	Placequantity uint
+	Iscomputer    bool
+	IDBuilding    uint
+	Name          string
+}
+
+type Building struct {
+	ID      uint
+	Address string
+}
+
+type Group struct {
+	ID          uint
+	IDSpecialty uint
+	Year        uint
+	IDTeacher   uint
+	Groupnumber string
+}
+
+type Specialty struct {
+	ID         uint
+	Code       string
+	Name       string
+	IDDuration uint
+}
+
+type DurationOfStudy struct {
+	ID            uint
+	Yearsquantity uint
+}
+

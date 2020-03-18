@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container" >
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                {{ template "navbar" }}
+            </div>
+            <!-- END SIDEBAR -->
+
+            <!-- START APP CONTENT -->
+            <div class="app-content">
+                <!-- START APP HEADER -->
+                <div class="app-header app-header-design-default">
+                    <ul class="app-header-buttons">
+                        <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                    </ul>
+                    <!-- END APP HEADER  -->
+
+                    <!-- START PAGE HEADING -->
+                    <div class="app-heading app-heading-bordered app-heading-page">
+                        <div class="title">
+                            <h2>Распределение нагрузки преподавателей</h2>
+                            <p>Здесь можно создать новый учебный план</p>
+                        </div>
+                    </div>
+                <div class="container" id="app">
+                    <div class="block">
+                        <div class="col-md-4 col-ms-4 grid-element filter-business">
+                            <div class="tile-basic">
+                                <a href="#" class="preview" data-preview-size="modal-lg">
+                                    <div class="tile-content tile-content-condensed-bottom text-center">
+                                        <button type="button" class="btn btn-success btn-lg" @click="modalClick('yes', 'POST')">Добавить</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-ms-4 grid-element filter-business">
+                            <div class="tile-basic">
+                                <a href="#" class="preview" data-preview-size="modal-lg">
+                                    <div class="tile-content tile-content-condensed-bottom text-center">
+                                        <button type="button" class="btn btn-warning btn-lg" @click="modalClick('no', 'PATCH')">Редактировать</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-ms-4 grid-element filter-business">
+                            <div class="tile-basic">
+                                <a href="#" class="delete" data-preview-size="modal-lg">
+                                    <div class="tile-content tile-content-condensed-bottom text-center">
+                                        <button type="button" class="btn btn-danger btn-lg" @click="modalClick('no', 'DELETE')">Удалить</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- модальные окна -->
+                        <div class="modal fade" id="delete" tabindex="1" role="dialog">
+                            <div class="modal-dialog">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                                <div class="modal-content">
+                                    <h1>1111111111</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="patch" tabindex="1" role="dialog">
+                            <div class="modal-dialog">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                                <div class="modal-content">
+                                    <h1></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="preview" tabindex="2" role="dialog">
+                            <div class="modal-dialog">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                                <div class="modal-content">
+                                    <div class="block">
+                                        <h1>Специальности</h1>
+                                        <div v-if="requestType === 'PATCH'" class="col-md-12">
+                                            <label>Id</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control ID" placeholder="1" :value="selectedRow.ID" disabled="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>Код специальности</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control code" placeholder="09.02.04" :value="selectedRow.Code">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label>Название специальности</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control name" placeholder="Программирование в компьютерных системах" :value="selectedRow.Name">
+                                                <div class="app-radio">
+                                                    <label><input type="radio" name="app-radio-1" class="duration-radio" value="1" :checked="selectedRow.IDDuration==1"> 2 года 10 месяцев</label>
+                                                    <label><input type="radio" name="app-radio-1" class="duration-radio" value="2" :checked="selectedRow.IDDuration==2"> 3 года 10 месяцев</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-default" onclick="addSpecialty()">Добавить специальность</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- модальные окна -->
+                        <div class="block-content">
+                            <table class="table table-bordered ">
+                                <h1>Специальности</h1>
+                                <p>Здесь вы можете добавить, удалить или редактировать специальность.</p>
+                                <thead>
+                                    <tr>
+                                        <th>Код специальности</th>
+                                        <th>Название специальности</th>
+                                        <th>Срок обучения</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="clickHover" v-for="(c, id) in specialties" @click="selectRow(c, id)">
+                                        <td>${c.Code}</td>
+                                        <td>${c.Name}</td>
+                                        <td v-if="c.IDDuration === 1">2 года 10 месяцев</td>
+                                        <td v-if="c.IDDuration === 2">3 года 10 месяцев</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END APP CONTAINER -->
+
+        </div>
+        <script src="https://unpkg.com/vue"></script>
+        <script type="text/javascript" src="../static/js/api/vueSpecialty.js"></script>
+        <script type="text/javascript" src="../static/js/api/jsSpecialty.js"></script>
+        <!-- IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <!-- END IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+        <!-- APP SCRIPTS -->
+        <script type="text/javascript" src="../static/js/app.js"></script>
+        <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+        <script type="text/javascript" src="../static/js/app_demo.js"></script>
+        <!-- END APP SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/datatables/dataTables.bootstrap.min.js"></script>
+    </body>

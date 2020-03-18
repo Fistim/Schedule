@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+
+        <!-- APP WRAPPER -->
+        <div class="app">
+
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+
+                <!-- START APP CONTENT -->
+                <div class="app-content app-sidebar-left">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                    </div>
+                    <!-- END APP HEADER  -->
+
+                    <!-- START PAGE CONTAINER -->
+                    <div class="container" id="content">
+                        <div class="col-md-5">
+                            <button type="button" class="btn btn-success">Добавить цикл</button>
+                            <button type="button" class="btn btn-danger">Удалить цикл</button>
+                            <div>
+                                <div class="margin-top-20">
+                                    <label>Выберите цикл</label>
+                                    <select class="s2-select- form-control" id="moduleList">
+                                        <option>Lorem ipsum dolor</option>
+                                        <option>Sit ament nopilous</option>
+                                        <option>Toi samo tuda</option>
+                                        <option>Mauris dolor nulla</option>
+                                        <option>Phasellus tincidunt</option>
+                                    </select>
+                                    <label class="control-label margin-top-50">Название цикла</label>
+                                    <div class="col-md-40">
+                                        <input type="text" v-model="fullNameCycle" v-on:keyup="getShortNameCycle" class="form-control" value="Lorem ipsum">
+                                    </div>
+                                    <label class="control-label margin-top-50">Сокращённое наименование</label>
+                                    <div class="col-md-40">
+                                        <input type="text" v-model="shortNameCycle" class="form-control" value="Lorem ipsum">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 margin-left-50">
+                            <button type="button" class="btn btn-success">Добавить модуль</button>
+                            <button type="button" class="btn btn-danger">Удалить модуль</button>
+                            <div>
+                                <div class="margin-top-20">
+                                    <label>Выберите Модуль</label>
+                                    <select class="s2-select- form-control" id="moduleList">
+                                        <option>Lorem ipsum dolor</option>
+                                        <option>Sit ament nopilous</option>
+                                        <option>Toi samo tuda</option>
+                                        <option>Mauris dolor nulla</option>
+                                        <option>Phasellus tincidunt</option>
+                                    </select>
+                                    <label class="control-label margin-top-50">Название цикла</label>
+                                    <div class="col-md-40">
+                                        <input type="text" v-model="fullNameModule" v-on:keyup="getShortNameModule" class="form-control" value="Lorem ipsum">
+                                    </div>
+                                    <label class="control-label margin-top-50">Сокращённое наименование</label>
+                                    <div class="col-md-40">
+                                        <input type="text" v-model="shortNameModule" class="form-control" value="Lorem ipsum">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END PAGE CONTAINER -->
+
+                </div>
+                <!-- END APP CONTENT -->
+
+            </div>
+            <!-- END APP CONTAINER -->
+
+            <!-- START APP SIDEPANEL -->
+            <div class="app-sidepanel scroll" data-overlay="show">
+                <div class="container">
+
+
+
+                </div>
+            </div>
+            <!-- END APP SIDEPANEL -->
+
+            <!-- APP OVERLAY -->
+            <div class="app-overlay"></div>
+            <!-- END APP OVERLAY -->
+        </div>
+        <!-- END APP WRAPPER -->
+
+        <!-- IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="text/javascript">
+        const vueApp = new Vue({
+        delimiters: ['${', '}'],
+        el: "#content",
+        data:{
+        fullNameModule: null,
+        shortNameModule: null,
+        fullNameCycle: null,
+        shortNameCycle: null,
+        },
+        methods:{
+        getShortNameCycle(){
+        var matches = this.fullNameCycle.match(/\b(\w)/g); // ['J','S','O','N']
+        this.shortNameCycle = matches.join(''); // JSON
+        },
+        getShortNameModule(){
+        var matches = this.fullNameModule.match(/\b(\w)/g); // ['J','S','O','N']
+        this.shortNameModule = matches.join(''); // JSON
+        },
+        },
+        })
+        </script>
+        <!-- END IMPORTANT SCRIPTS -->
+        <!-- APP SCRIPTS -->
+        <script type="text/javascript" src="../static/js/app.js"></script>
+        <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+        <!-- END APP SCRIPTS -->
+    </body>
+</html>

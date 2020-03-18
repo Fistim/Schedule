@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+        <!-- APP WRAPPER -->
+        <div class="app">
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon"
+                                data-sidebar-toggle=".app-sidebar.dir-left"><span
+                                class="icon-menu"></span></a></li>
+                                <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon"
+                                    data-sidebar-minimize=".app-sidebar.dir-left"><span
+                                    class="icon-menu"></span></a></li>
+                                </ul>
+                                <!-- END APP HEADER  -->
+                                <!-- START PAGE HEADING -->
+                                <div class="app-heading app-heading-bordered app-heading-page">
+                                    <div class="title">
+                                        <h2>Информация о кабинетах</h2>
+                                        <p>Здесь можно редактировать информацию о кабинетах </p>
+                                    </div>
+                                </div>
+                                <!-- END PAGE HEADING -->
+                                <!-- START PAGE CONTAINER -->
+                                <div class="container" id="app">
+                                        <!-- START BLOCk -->
+                                        <div class="block">
+                                            <div class="row" >
+                                                <div class="col-md-4">
+                                                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modal-default">Добавить</button>
+                                                </div>
+                                                <div class="col-md-4" >
+                                                    <button type="button" class="btn btn-danger btn-lg"  >Удалить</button>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button type="button" class="btn btn-warning btn-lg">Редактировать</button>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <table class="table table-striped table-bordered ">
+                                                <tr>
+                                                    <th>Номер кабинета</th>
+                                                    <th>Количество мест</th>
+                                                    <th>Тип кабинета</th>
+                                                    <th>Корпус</th>
+                                                </tr>
+                                                <tr class="clickHover" v-for="(c, i) in classrooms">
+                                                    <td>${c.Name}</td>
+                                                    <td>${c.Placequantity}</td>
+                                                    <td>${c.Iscomputer ? "Компьютерный" : "Лекционный"}</td>
+                                                    <td v-if="c.IDBuilding === 1">Герцена, 18</td>
+                                                    <td v-if="c.IDBuilding === 2">Московский тракт, 12</td>
+                                                 </tr>
+<!--                                                 <tr>
+                                                    <td><a href="#" id="classroomId" data-type="text" data-pk="1" data-title="Номер кабинета" class="editable editable-click" data-original-title="" title="">{{ .ClassroomId}}</a></td>
+                                                    <td><a href="#" id="placeQuantity" data-type="text" data-pk="1" data-title="Номер кабинета" class="editable editable-click" data-original-title="" title="">{{ .PlaceQuantity}}</a></td>
+                                                    <td><a href="#" id="IsComputer" data-type="text" data-pk="1" data-title="Номер кабинета" class="editable editable-click" data-original-title="" title="">{{ .IsComputer}}</a></td>
+                                                    <td><a href="#" id="IDBuilding" data-type="text" data-pk="1" data-title="Номер кабинета" class="editable editable-click" data-original-title="" title="">{{ .IDBuilding}}</a></td>
+                                                </tr> -->
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END BLOCk -->
+                            </div>
+                            <!-- END PAGE CONTAINER -->
+                        </div>
+                        <!-- END APP CONTENT -->
+                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default-header">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                                <div class="modal-content">
+                                    <div class="block">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="modal-default-header">Добавление кабинета</h4>    
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-3">
+                                                <label>Номер кабинета</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control numberCab">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Количество мест</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control placeQuantity">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Корпус</label>
+                                            <div class="col-md-9">
+                                                <div class="app-radio inline">
+                                                    <label><input type="radio" class="building-radio" name="app-radio-2" value="1" checked="checked"> ГК</label>
+                                                </div>
+                                                <div class="app-radio inline">
+                                                    <label><input type="radio" class="building-radio" name="app-radio-2" value="2"> ЦОПП</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-6">
+                                                    <div class="app-checkbox inline">
+                                                        <label><input type="checkbox" class="computerclass" name="app-checkbox-2" value="0" checked="checked"> Компьютерный</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">Закрыть</button>
+                                                <button type="button" class="btn btn-default" onclick="addClassroom()">Добавить</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END APP CONTAINER -->
+                    </div>
+                    <script src="https://unpkg.com/vue"></script>
+                    <
+                    <!-- IMPORTANT SCRIPTS -->
+                    <script type="text/javascript" src="../static/js/api/vueClassrooms.js"></script>
+                    
+                    <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+                    <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+                    <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+                    <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+                    <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+                    <!-- END IMPORTANT SCRIPTS -->
+                    <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+                    <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+                    <!-- APP SCRIPTS -->
+                    <script type="text/javascript" src="../static/js/app.js"></script>
+                    <script src="../static/js/vendor/xeditable/bootstrap-editable.min.js"></script>
+                    <script src="../static/js/vendor/xeditable/ext/address.js"></script>
+                    <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+                    <!-- END APP SCRIPTS -->
+                    <script src="../static/js/app_demo_editable.js"></script>
+                </body>
+            </html>

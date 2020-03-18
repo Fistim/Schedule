@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Распределение нагрузки преподавателей</title>
+        {{ template "head_tmpl" }}
+    </head>
+    <body>
+
+        <!-- APP WRAPPER -->
+        <div class="app">
+
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START SIDEBAR -->
+                <div class="app-sidebar app-navigation app-navigation-fixed scroll app-navigation-style-default dir-left">
+                    {{ template "navbar" }}
+                </div>
+                <!-- END SIDEBAR -->
+
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <!-- START APP HEADER -->
+                    <div class="app-header app-header-design-default">
+                        <ul class="app-header-buttons">
+                            <li class="visible-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-toggle=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                            <li class="hidden-mobile"><a href="#" class="btn btn-link btn-icon" data-sidebar-minimize=".app-sidebar.dir-left"><span class="icon-menu"></span></a></li>
+                        </ul>
+                    <!-- END APP HEADER  -->
+
+                    <!-- START PAGE HEADING -->
+                    <div class="app-heading app-heading-bordered app-heading-page">
+                        <div class="title">
+                            <h2>Распределение нагрузки преподавателей</h2>
+                            <p>Здесь можно создать новый учебный план</p>
+                        </div>
+                        <!--
+                        <div class="heading-elements">
+                            <a href="#" class="btn btn-danger" id="page-like"><span class="app-spinner loading"></span> loading...</a>
+                            <a href="https://themeforest.net/item/boooya-revolution-admin-template/17227946?ref=aqvatarius&license=regular&open_purchase_for_item_id=17227946" class="btn btn-success btn-icon-fixed"><span class="icon-text">$24</span> Purchase</a>
+                        </div>
+                        -->
+                    </div>
+                    <div class="app-heading-container app-heading-bordered bottom">
+                        <ul class="breadcrumb">
+                           <!--  <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Layouts</a></li>
+                            <li class="active">Fixed Navigation</li> -->
+                        </ul>
+                    </div>
+                    <!-- END PAGE HEADING -->
+
+                    <!-- START PAGE CONTAINER -->
+                    <div class="container">
+                        <!-- END BLOCk -->
+                        <div class="block">
+                        <div class="table-responsive">
+                            <h1>Расписание звонков учебных занятий</h1>
+                                    <table class="table table-hover table-bordered">
+                                        <tr>
+                                            <th>№ пары</th>
+                                            <th>Урок</th>
+                                            <th>Начало</th>
+                                            <th>Конец</th>
+                                            <th>№ пары</th>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">1</td>
+                                            <td>1</td>
+                                            <td>8:30</td>
+                                            <td>9:15</td>
+                                            <td rowspan="2">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>9:20</td>
+                                            <td>10:05</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">2</td>
+                                            <td>1</td>
+                                            <td>10:15</td>
+                                            <td>11:00</td>
+                                            <td rowspan="2">2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>11:05</td>
+                                            <td>11:50</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="5">Обед 11:30 - 12:30</th>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">3</td>
+                                            <td>1</td>
+                                            <td>12:30</td>
+                                            <td>13:15</td>
+                                            <td rowspan="2">3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>13:20</td>
+                                            <td>14:05</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">4</td>
+                                            <td>1</td>
+                                            <td>14:15</td>
+                                            <td>15:00</td>
+                                            <td rowspan="2">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>15:05</td>
+                                            <td>15:50</td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="5">перерыв 20 минут</th>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">5</td>
+                                            <td>1</td>
+                                            <td>16:10</td>
+                                            <td>16:55</td>
+                                            <td rowspan="2">5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>17:00</td>
+                                            <td>17:45</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">6</td>
+                                            <td>1</td>
+                                            <td>17:55</td>
+                                            <td>18:40</td>
+                                            <td rowspan="2">6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>18:45</td>
+                                            <td>19:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">7</td>
+                                            <td>1</td>
+                                            <td>19:40</td>
+                                            <td>20:25</td>
+                                            <td rowspan="2">7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>20:30</td>
+                                            <td>21:15</td>
+                                        </tr>
+                                    </table>
+                                        <h1>Расписание звонков учебных занятий в среду и субботу</h1>
+
+                                        <table class="table table-bordered table-hover">
+
+                                        <thead>
+
+                                            <tr>
+
+                                                <th>№ пары</th>
+
+                                                <th>Начало</th>
+
+                                                <th>Конец</th>
+
+                                                <th>№ пары</th>
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+
+                                                <td>1</td>
+
+                                                <td>8:30</td>
+
+                                                <td>9:30</td>
+
+                                                <td>1</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>2</td>
+
+                                                <td>9:40</td>
+
+                                                <td>10:40</td>
+
+                                                <td>2</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>3</td>
+
+                                                <td>10:50</td>
+
+                                                <td>11:50</td>
+
+                                                <td>3</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>4</td>
+
+                                                <td>12:00</td>
+
+                                                <td>13:00</td>
+
+                                                <td>4</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>5</td>
+
+                                                <td>13:10</td>
+
+                                                <td>14:10</td>
+
+                                                <td>5</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>6</td>
+
+                                                <td>14:20</td>
+
+                                                <td>15:20</td>
+
+                                                <td>6</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>7</td>
+
+                                                <td>15:30</td>
+
+                                                <td>16:30</td>
+
+                                                <td>7</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>8</td>
+
+                                                <td>16:40</td>
+
+                                                <td>17:40</td>
+
+                                                <td>8</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>9</td>
+
+                                                <td>17:50</td>
+
+                                                <td>18:50</td>
+
+                                                <td>9</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>10</td>
+
+                                                <td>19:00</td>
+
+                                                <td>20:00</td>
+
+                                                <td>10</td>
+
+                                            </tr>
+
+                                            <tr>
+
+                                                <td>11</td>
+
+                                                <td>20:10</td>
+
+                                                <td>21:10</td>
+
+                                                <td>11</td>
+
+                                            </tr>
+
+                                        </tbody>
+
+                        </table>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE CONTAINER -->
+
+                </div>
+                <!-- END APP CONTENT -->
+
+            </div>
+            <!-- END APP CONTAINER -->
+
+        </div>
+
+        <!-- IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/moment/moment.min.js"></script>
+        <script type="text/javascript" src="../static/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <!-- END IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="../static/js/vendor/bootstrap-select/bootstrap-select.js"></script>
+
+        <script type="text/javascript" src="../static/js/vendor/select2/select2.full.min.js"></script>
+        <!-- APP SCRIPTS -->
+        <script type="text/javascript" src="../static/js/app.js"></script>
+        <script type="text/javascript" src="../static/js/app_plugins.js"></script>
+        <style>
+
+
+</style>
+        <!-- END APP SCRIPTS -->
+    </body>
+</html>

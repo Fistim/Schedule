@@ -1,0 +1,152 @@
+OK
+[ 17:45 ] API log file can be found at log/Requests_API.log
+[ 17:45 ] URL log file can be found at log/Requests_URL.log
+[ 17:45 ] Error log file can be found at log/error.log
+[ 17:45 ]  Server is listening
+[ 17:45 ] [34m Request [0m from 192.168.14.0:57199  to  /plan/
+/
+[ 15:01 ] [34m Request [0m from 192.168.14.187:49832  to  /plan/
+[ 15:01 ] [34m Request [0m from 192.168.14.187:49832  to  /teachercard/
+[ 15:01 ] [34m Request [0m from 192.168.14.187:49840  to  /groupcard/
+[ 15:01 ] [34m Request [0m from 192.168.14.187:49840  to  /schedule/
+[ 15:01 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:01 ] [34m Request [0m from 192.168.14.187:49832  to  /schedule/
+[ 15:01 ]  [32m GET [0m  request from  192.168.14.187:49832  to  /api/schedule/generate
+[ 15:02 ]  [32m GET [0m  request from  192.168.14.187:49832  to  /api/schedule/generate
+[ 15:02 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:05 ] [34m Request [0m from 192.168.14.187:49832  to  /opop/
+[ 15:08 ] [34m Request [0m from 192.168.13.35:46746  to  /plan/
+[ 15:14 ] [34m Request [0m from 192.168.13.35:46770  to  /plan/
+[ 15:27 ] [34m Request [0m from 192.168.13.35:46792  to  /specialty/
+[ 15:27 ]  [32m GET [0m  request from  192.168.13.35:46792  to  /api/specialty/
+[ 16:49 ] [34m Request [0m from 192.168.14.187:49472  to  /opop/
+[ 16:56 ] [34m Request [0m from 192.168.14.187:49512  to  /opop/
+[ 20:13 ] [34m Request [0m from 77.247.110.63:58544  to  /plan/
+[ 20:13 ] [34m Request [0m from 77.247.110.63:59580  to  /plan/
+[ 20:13 ] [34m Request [0m from 77.247.110.63:60864  to  /plan/
+[ 22:53 ] [34m Request [0m from 192.168.9.251:36528  to  /plan/
+[ 10:56 ] [34m Request [0m from 192.168.12.74:41728  to  /plan/
+[ 12:41 ] [34m Request [0m from 171.34.176.84:56906  to  /plan/
+[ 12:47 ] [34m Request [0m from 192.168.14.187:50910  to  /plan/
+rror: [0m json: cannot unmarshal string into Go value of type api.Classroom
+[ 12:58 ]  [32m POST [0m  request from  192.168.13.35:45696  to  /api/classroom/
+[ 12:58 ]  [32m POST [0m  request from  192.168.13.35:45696  to  /api/classroom/
+[ 12:58 ]  [31m Error: [0m json: cannot unmarshal string into Go value of type api.Classroom
+[ 13:32 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:32 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:32 ]  [31m Error: [0m json: cannot unmarshal string into Go value of type api.Classroom
+[ 13:33 ]  [32m POST [0m  request from  192.168.13.35:45674  to  /api/classroom/
+[ 13:33 ]  [32m POST [0m  request from  192.168.13.35:45674  to  /api/classroom/
+{69 26 true 1 551}
+[ 13:33 ] [34m Request [0m from 192.168.13.35:45736  to  /classroom/
+[ 13:33 ]  [32m GET [0m  request from  192.168.13.35:45744  to  /api/building/
+[ 13:33 ]  [32m GET [0m  request from  192.168.13.35:45744  to  /api/classroom/
+[ 13:33 ] [34m Request [0m from 192.168.13.35:45736  to  /classroom/
+[ 13:33 ]  [32m GET [0m  request from  192.168.13.35:45744  to  /api/building/
+[ 13:33 ]  [32m GET [0m  request from  192.168.13.35:45744  to  /api/classroom/
+[ 13:34 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:34 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:34 ]  [31m Error: [0m json: cannot unmarshal string into Go value of type api.Classroom
+[ 13:34 ] [34m Request [0m from 192.168.13.35:45736  to  /classroom/
+[ 13:34 ]  [32m GET [0m  request from  192.168.13.35:45742  to  /api/building/
+[ 13:34 ]  [32m GET [0m  request from  192.168.13.35:45744  to  /api/classroom/
+[ 13:34 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:34 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:34 ]  [31m Error: [0m json: cannot unmarshal string into Go value of type api.Classroom
+[ 13:34 ] [34m Request [0m from 192.168.13.35:45736  to  /specialty/
+[ 13:34 ]  [32m GET [0m  request from  192.168.13.35:45744  to  /api/specialty/
+[ 13:35 ]  [32m PATCH [0m  request from  192.168.13.35:45736  to  /api/specialty/
+[ 13:36 ] [34m Request [0m from 192.168.13.35:45736  to  /classroom/
+[ 13:36 ]  [32m GET [0m  request from  192.168.13.35:45742  to  /api/building/
+[ 13:36 ]  [32m GET [0m  request from  192.168.13.35:45742  to  /api/classroom/
+[ 13:36 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+[ 13:36 ]  [32m POST [0m  request from  192.168.13.35:45736  to  /api/classroom/
+{70 10 true 2 552}
+[ 13:36 ] [34m Request [0m from 192.168.13.35:45736  to  /classroom/
+[ 13:36 ]  [32m GET [0m  request from  192.168.13.35:45786  to  /api/building/
+[ 13:36 ]  [32m GET [0m  request from  192.168.13.35:45742  to  /api/classroom/
+[ 13:39 ] [34m Request [0m from 192.168.13.35:45794  to  /classroom/
+[ 13:39 ]  [32m GET [0m  request from  192.168.13.35:45796  to  /api/building/
+[ 13:39 ]  [32m GET [0m  request from  192.168.13.35:45794  to  /api/classroom/
+[ 13:40 ] [34m Request [0m from 192.168.13.35:45794  to  /classroom/
+[ 13:40 ]  [32m GET [0m  request from  192.168.13.35:45796  to  /api/building/
+[ 13:40 ]  [32m GET [0m  request from  192.168.13.35:45794  to  /api/classroom/
+lty/
+[ 20:47 ] [34m Request [0m from 192.168.13.35:33572  to  /specialty/
+[ 20:47 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:47 ] [34m Request [0m from 192.168.13.35:33572  to  /specialty/
+[ 20:47 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:48 ] [34m Request [0m from 192.168.13.35:33572  to  /specialty/
+[ 20:48 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:49 ] [34m Request [0m from 192.168.13.35:33572  to  /specialty/
+[ 20:49 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:50 ] [34m Request [0m from 192.168.13.35:33572  to  /specialty/
+[ 20:50 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:50 ] [34m Request [0m from 192.168.13.35:33572  to  /specialty/
+[ 20:50 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:52 ] [34m Request [0m from 192.168.13.35:33582  to  /specialty/
+[ 20:52 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:54 ] [34m Request [0m from 192.168.13.35:33582  to  /specialty/
+[ 20:54 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:54 ] [34m Request [0m from 192.168.13.35:33582  to  /specialty/
+[ 20:54 ]  [32m GET [0m  request from  192.168.13.35:33582  to  /api/specialty/
+[ 20:57 ] [34m Request [0m from 192.168.13.35:33788  to  /specialty/
+[ 20:57 ]  [32m GET [0m  request from  192.168.13.35:33794  to  /api/specialty/
+[ 20:58 ]  [32m POST [0m  request from  192.168.13.35:33788  to  /api/specialty/
+json: cannot unmarshal string into Go value of type api.Specialty
+[ 20:58 ] [34m Request [0m from 192.168.13.35:33788  to  /specialty/
+[ 20:58 ]  [32m GET [0m  request from  192.168.13.35:33794  to  /api/specialty/
+[ 20:58 ] [34m Request [0m from 192.168.13.76:48522  to  /plan/
+[ 20:58 ]  [32m POST [0m  request from  192.168.13.35:33788  to  /api/specialty/
+json: cannot unmarshal string into Go value of type api.Specialty
+[ 20:58 ] [34m Request [0m from 192.168.13.35:33788  to  /specialty/
+[ 20:58 ]  [32m GET [0m  request from  192.168.13.35:33794  to  /api/specialty/
+[ 20:58 ]  [32m POST [0m  request from  192.168.13.35:33788  to  /api/specialty/
+json: cannot unmarshal string into Go value of type api.Specialty
+[ 20:59 ] [34m Request [0m from 192.168.13.35:33788  to  /specialty/
+[ 20:59 ]  [32m GET [0m  request from  192.168.13.35:33794  to  /api/specialty/
+[ 21:00 ]  [32m POST [0m  request from  192.168.13.35:33788  to  /api/specialty/
+json: cannot unmarshal string into Go value of type api.Specialty
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33838  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33838  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33846  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33846  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33846  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33846  to  /api/specialty/
+[ 21:02 ] [34m Request [0m from 192.168.13.35:33848  to  /specialty/
+[ 21:02 ]  [32m GET [0m  request from  192.168.13.35:33858  to  /api/specialty/
+[ 21:03 ] [34m Request [0m from 192.168.13.35:33848  to  /specialty/
+[ 21:03 ]  [32m GET [0m  request from  192.168.13.35:33860  to  /api/specialty/
+[ 21:03 ]  [32m POST [0m  request from  192.168.13.35:33848  to  /api/specialty/
+json: cannot unmarshal string into Go value of type api.Specialty
+[ 21:04 ] [34m Request [0m from 192.168.13.35:33848  to  /specialty/
+[ 21:04 ]  [32m GET [0m  request from  192.168.13.35:33852  to  /api/specialty/
+[ 21:04 ]  [32m POST [0m  request from  192.168.13.35:33848  to  /api/specialty/
+json: cannot unmarshal string into Go value of type api.Specialty
+[ 21:05 ] [34m Request [0m from 192.168.13.35:33848  to  /specialty/
+[ 21:05 ]  [32m GET [0m  request from  192.168.13.35:33852  to  /api/specialty/
+[ 21:05 ]  [32m POST [0m  request from  192.168.13.35:33848  to  /api/specialty/
+[ 21:05 ] [34m Request [0m from 192.168.13.35:33848  to  /specialty/
+[ 21:05 ]  [32m GET [0m  request from  192.168.13.35:33852  to  /api/specialty/
